@@ -104,10 +104,10 @@ public class Envelope implements Geometry {
     	}
     	
     	if(EPSGid < 0) {
-    		this.spatialReference = new SpatialReferenceWKID(EPSGid);
+    		this.spatialReference = new SpatialReferenceWKT(envelope.getCoordinateReferenceSystem().toWKT());    		
     	}
     	else {
-    		this.spatialReference = new SpatialReferenceWKT(envelope.getCoordinateReferenceSystem().toWKT());
+    		this.spatialReference = new SpatialReferenceWKID(EPSGid);
     	}
     }
 
