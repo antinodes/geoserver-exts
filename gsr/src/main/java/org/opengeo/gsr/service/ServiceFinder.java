@@ -69,7 +69,7 @@ public class ServiceFinder extends AbstractCatalogFinder {
                         geoServer);
                 break;
             case MapServer:
-                if (null == operation) {
+                if (null == operation || operation.isEmpty()) {
                     resource = new MapResource(null, request, response, MapService.class, geoServer, format);
                 } else if ("query".equals(operation)) {
                     resource = new QueryResource(null, request, response, catalog, format);
